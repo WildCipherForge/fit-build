@@ -1,0 +1,55 @@
+@startuml class_diagram
+title Diagramme de classes - Club Sportif
+
+class Member {
+  - id : int
+  - firstName : String
+  - lastName : String
+  - email : String
+  - phone : String
+  - registrationDate : LocalDate
+  + getFullName() : String
+}
+
+class Membership {
+  - id : int
+  - memberId : int
+  - type : String
+  - startDate : LocalDate
+  - endDate : LocalDate
+  - price : double
+  - isActive() : boolean
+}
+
+class Database {
+  - {static} instance : Database
+  - connection : Connection
+  + {static} getInstance() : Database
+  + getConnection() : Connection
+}
+
+class MemberDAO {
+  - db : Database
+  + create(member : Member) : void
+  + findById(id : int) : Member
+  + findAll() : List<Member>
+  + update(member : Member) : void
+  + delete(id : int) : void
+}
+
+class MembershipDAO {
+  - db : Database
+  + create(membership : Membership) : void
+  + findById(id : int) : Membership
+  + findAllByMember(memberId : int) : List<Membership>
+  + update(membership : Membership) : void
+  + delete(id : int) : void
+}
+
+Member "1" -- "0..*" Membership : possède >
+MemberDAO ..> Member : gère
+MembershipDAO ..> Membership : gère
+MemberDAO --> Database : utilise
+MembershipDAO --> Database : utilise
+
+@enduml

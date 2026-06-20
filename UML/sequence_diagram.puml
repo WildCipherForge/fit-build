@@ -1,0 +1,28 @@
+@startuml sequence_diagram
+title Diagramme de séquence - Ajouter un Abonnement
+
+actor Admin
+participant "View (FXML)" as View
+participant "MainController" as Controller
+participant "MembershipDAO" as DAO
+participant "Database" as DB
+
+Admin -> View : Remplit le formulaire et clique "Ajouter"
+View -> Controller : onAddMembership(membershipData)
+Controller -> Controller : validerDonnees(membershipData)
+
+alt données valides
+  Controller -> DAO : create(membership)
+  DAO -> DB : getConnection()
+  DB --> DAO : connection
+  DAO -> DB : executeUpdate(INSERT INTO membership ...)
+  DB --> DAO : résultat
+  DAO --> Controller : abonnement créé (id)
+  Controller -> View : afficherConfirmation()
+  View -> Admin : Affiche message de succès
+else données invalides
+  Controller -> View : afficherErreur(message)
+  View -> Admin : Affiche message d'erreur
+end
+
+@enduml
