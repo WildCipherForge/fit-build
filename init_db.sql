@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `Gym`.`members` (
   `birth_date` DATETIME NOT NULL,
   `phone` VARCHAR(45) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
+  `registration_date` DATETIME NOT NULL,
   PRIMARY KEY (`member_id`))
 ENGINE = InnoDB;
 
@@ -34,8 +35,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Gym`.`memberships` (
   `membership_id` INT NOT NULL AUTO_INCREMENT,
   `price` DECIMAL(7,2) NOT NULL,
-  `period` DATETIME NOT NULL,
+  `period` ENUM('MONTHLY', 'QUARTERLY', 'ANNUAL') NOT NULL,
   `start_date` DATETIME NOT NULL,
+  `end_date` DATETIME NOT NULL,
   `member_id` INT NOT NULL,
   PRIMARY KEY (`membership_id`),
   INDEX `fk_membership_members_idx` (`member_id` ASC) VISIBLE,
