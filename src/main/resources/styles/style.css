@@ -1,1 +1,80 @@
-/* TODO */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f4f6f8;
+}
+
+.section-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+.form-panel {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d8dee4;
+    -fx-border-width: 0 1 0 0;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+.text-field, .date-picker, .combo-box {
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #c5cdd5;
+}
+
+.button {
+    -fx-background-color: #e1e5ea;
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-padding: 5px 12px;
+}
+
+.button:hover {
+    -fx-background-color: #d2d8de;
+}
+
+.primary-button {
+    -fx-background-color: #2f7d4f;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: #266740;
+}
+
+.danger-button {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+}
+
+.danger-button:hover {
+    -fx-background-color: #a33024;
+}
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d8dee4;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #eceff2;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #cde6d6;
+    -fx-text-fill: #1d1d1d;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #f4f6f8;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #2f7d4f;
+    -fx-font-weight: bold;
+}
