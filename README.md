@@ -56,3 +56,7 @@ mvn clean compile javafx:run
 4. Try renewing/cancelling a membership and check the Statistics tab updates accordingly.
 5. Export to CSV and confirm the file content is correct.
 6. Restart the app to confirm data persists in MySQL.
+
+## Link for the video and Report
+
+Demo : "https://drive.google.com/drive/folders/1yD-Qvm5fBPU9qKll0TWkekH3Xnm3TDXF?usp=drive_link"
